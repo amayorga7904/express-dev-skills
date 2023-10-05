@@ -3,7 +3,8 @@ const Skill = require('../models/skill')
 module.exports = { 
   index, 
   show, 
-  new: newSkill
+  new: newSkill,
+  create
  }
 
 function index(req, res, next) {
@@ -17,5 +18,10 @@ function show(req, res, next) {
   }
 
   function newSkill(req, res) {
-    res.render('/skills/new', { title: 'New Skill'})
+    res.render('skills/new', { title: 'New Skill' })
+  }
+
+  function create(req, res) {
+    Skill.create(req.body)
+    res.redirect('/skills')
   }

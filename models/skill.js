@@ -1,7 +1,8 @@
 
 module.exports = {
     getAll,
-    getOne
+    getOne,
+    create
 }
 
 const skills = [
@@ -11,7 +12,11 @@ const skills = [
     {id: 7595537, skill: 'React', learned: false}
 ]
 
-
+function create(skill) {
+    skill.id = Date.now() % 1000000
+    skill.learned = false
+    skills.push(skill)
+}
 
 function getAll() {
     return skills
