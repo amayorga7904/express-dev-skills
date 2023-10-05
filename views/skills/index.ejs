@@ -2,13 +2,15 @@
 <%- include('../partials/header') %>
 
 <body>
-    <h1>Skills</h1>
+    <!-- <h1>Skills</h1> -->
     <h3>Skills as of <%= time %></h3>
     <ul>
+
       <% skills.forEach(function(skill) { %>
         <li>
             <a href="/skills/<%= skill.id %>"><%= skill.skill %></a>
       <% }); %>
     </ul> 
+    <a href="/skills/new">Add Skill</a>
 
 <%- include('../partials/footer') %>
