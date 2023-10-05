@@ -13,6 +13,9 @@
             <button type="submit">X</button>
           </form>
             <a href="/skills/<%= skill.id %>"><%= skill.skill %></a>
+            -
+            <%= skill.learned ? 'learned' : 'not learned' %>
+        </li>
       <% }); %>
     </ul> 
     <a href="/skills/new">Add Skill</a>

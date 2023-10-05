@@ -10,10 +10,15 @@ router.get('/', skillsController.index);
 router.get('/new', skillsController.new)
 
 router.get('/:id', skillsController.show)
+//GET /skills/:id/edit
+router.get('/:id/edit', skillsController.edit)
 //POST /skills
 router.post('/', skillsController.create)
 //DELETE /skills/:id
 router.delete('/:id', skillsController.delete)
+//PUT /skills/:id
+router.put('/:id', skillsController.update)
+
 module.exports = router;
 
 

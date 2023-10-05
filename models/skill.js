@@ -3,7 +3,8 @@ module.exports = {
     getAll,
     getOne,
     create,
-    deleteOne
+    deleteOne,
+    update
 }
 
 const skills = [
@@ -12,6 +13,20 @@ const skills = [
     {id: 1029283, skill: 'HTML', learned: true},
     {id: 7595537, skill: 'React', learned: false}
 ]
+
+// function update(id, updatedSkill) {
+//     id = parseInt(id)
+//     const skill = skills.find((skill) => {
+//         return skill.id === id
+//     })
+//     Object.assign(skill, updatedSkill)
+// }
+
+function update(id, updatedSkill) {
+    id = parseInt(id);
+    const skill = skills.find(skill => skill.id === id);
+   Object.assign(skill, updatedSkill)
+  }
 
 function deleteOne(id) {
     id = parseInt(id)
@@ -36,7 +51,6 @@ function getOne(id) {
     // let skill = skills.find(function() {
     //     if (skill.id === id)
     //     return skill 
-    let skill = skills.find(skill => skill.id === id)
-    return skill
+    return skills.find(skill => skill.id === id)
     // })
 }
