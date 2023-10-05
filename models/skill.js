@@ -2,7 +2,8 @@
 module.exports = {
     getAll,
     getOne,
-    create
+    create,
+    deleteOne
 }
 
 const skills = [
@@ -11,6 +12,14 @@ const skills = [
     {id: 1029283, skill: 'HTML', learned: true},
     {id: 7595537, skill: 'React', learned: false}
 ]
+
+function deleteOne(id) {
+    id = parseInt(id)
+    const idx = skills.findIndex((skill) => {
+        return skill.id === id
+    })
+    skills.splice(idx, 1)
+}
 
 function create(skill) {
     skill.id = Date.now() % 1000000
